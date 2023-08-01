@@ -139,10 +139,9 @@ img {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  transition: color var(--hover-transition);
 }
 
-.header-link {
-}
 .current-page {
   color: var(--ocean);
 }
@@ -176,6 +175,7 @@ img {
   letter-spacing: 0.02em;
 }
 .header-address-link {
+  transition: color var(--hover-transition);
 }
 
 /* Main styles --------------------------------------------------------------- */
@@ -229,6 +229,7 @@ img {
   padding: 16px 32px;
   border-radius: 4px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  transition: background-color var(--hover-transition);
 }
 
 /*Adventages ---------------------------------------------------------------*/
@@ -375,6 +376,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color var(--hover-transition);
 }
 
 .team-list-link:hover,
@@ -419,6 +421,8 @@ img {
   align-items: center;
   justify-content: center;
   color: var(--light-slate);
+  transition: border-color var(--hover-transition),
+    color var(--hover-transition);
 }
 .customers-link:hover,
 .customers-link:focus {
@@ -506,6 +510,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color var(--hover-transition);
 }
 
 .footer-list-link:hover,
@@ -546,10 +551,15 @@ img {
   border-radius: 4px;
   border: 1px solid var(--cornflower, #e7e9fc);
   padding: 12px 24px 12px 24px;
+  transition: background-color var(--hover-transition),
+    color var(--hover-transition), border-color var(--hover-transition),
+    box-shadow var(--hover-transition);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
   border: 1px solid transparent;
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio-list {
   display: flex;
@@ -586,13 +596,18 @@ img {
 }
 
 .portfolio-img-link {
+  display: block;
   transition: box-shadow var(--hover-transition);
+}
+
+.portfolio-img-link:hover,
+.portfolio-img-link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-img-link:hover .portfolio-cover {
   transform: translateY(0);
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item-content {
@@ -616,4 +631,77 @@ img {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+}
+
+/* Modal ------------------------------------------------------------------- */
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: var(--navyblue-modal, rgba(46, 47, 66, 0.4));
+  top: 0;
+  transition: opacity var(--hover-transition),
+    visibility var(--hover-transition);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 408px;
+  min-height: 584px;
+  border-radius: 4px;
+  background-color: var(--dairy, #fcfcfc);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  transition: transform var(--hover-transition);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cornflower);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: background-color var(--hover-transition),
+    border var(--hover-transition);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--ocean);
+  border: none;
+}
+
+.modal-close-btn:hover .modal-svg {
+  fill: var(--white);
+  transition: fill var(--hover-transition);
+}
+
+.modal-close-btn:focus .modal-svg {
+  fill: var(--white);
+  transition: fill var(--hover-transition);
+}
+
+.modal-svg {
+  fill: var(--navy-blue-modal);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
