@@ -525,6 +525,7 @@ img {
   background-color: var(--green, #31d0aa);
 }
 .footer-link-icon {
+  fill: var(--cloud);
 }
 /* Portfolio ---------------------------------------------------------------*/
 
