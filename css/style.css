@@ -97,6 +97,9 @@ img {
   padding-top: 24px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--cornflower);
+  box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 .header-container {
   display: flex;
@@ -150,7 +153,7 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -3px;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   display: block;
@@ -186,6 +189,7 @@ img {
 /* Hero ---------------------------------------------------------------*/
 
 .hero {
+  max-width: 1440px;
   background: var(--navy-blue);
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
@@ -196,6 +200,7 @@ img {
   background-position: center;
   background-size: cover;
   padding: 188px 0;
+  margin: 0 auto;
 }
 .container-hero {
   display: flex;
@@ -385,6 +390,7 @@ img {
 }
 
 .team-link-icon {
+  fill: var(--cloud);
 }
 
 /* Customers ------------------------------------------------------------- */
@@ -443,9 +449,10 @@ img {
 
 .footer-flex {
   display: flex;
-  gap: 120px;
+  align-items: baseline;
 }
 .container-footer {
+  margin-right: 120px;
 }
 .footer-text {
   color: var(--cloud);
@@ -518,11 +525,6 @@ img {
   background-color: var(--green, #31d0aa);
 }
 .footer-link-icon {
-}
-
-.container-footer-portfolio {
-  display: flex;
-  gap: 120px;
 }
 /* Portfolio ---------------------------------------------------------------*/
 
@@ -664,8 +666,8 @@ img {
 
 .modal-close-btn {
   position: absolute;
-  top: 32px;
-  right: 32px;
+  top: 24px;
+  right: 24px;
   cursor: pointer;
   width: 24px;
   height: 24px;
